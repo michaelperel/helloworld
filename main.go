@@ -7,8 +7,10 @@ import (
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	name := os.Getenv("NAME")
-	fmt.Fprintf(w, "hello %s\n", name)
+	country := os.Getenv("COUNTRY")
+	secret := os.Getenv("SECRET")
+
+	fmt.Fprintf(w, "hello %s, this is your secret: %s\n", country, secret)
 }
 
 func main() {
